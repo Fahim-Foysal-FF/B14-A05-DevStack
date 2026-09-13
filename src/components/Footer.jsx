@@ -3,7 +3,8 @@ export default function Footer() {
     <footer className="max-w-7xl mx-auto px-4 py-12 mt-20 border-t border-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div className="col-span-1">
-          <img src="/logo-text.png" alt="Logo" className="h-6 mb-4" />
+          {/* Logo updated to h-10 for larger size */}
+          <img src="/logo-text.png" alt="DevStack Logo" className="h-10 mb-4 object-contain" />
           <p className="text-gray-500 text-sm">Curated tools, technologies, and resources for development building modern software.</p>
         </div>
         <div>
