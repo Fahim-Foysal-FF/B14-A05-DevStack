@@ -2,15 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Using pure CSS to bypass Tailwind parser error */
 .brand-gradient {
-  background: linear-gradient(to right, #fb923c, #ec4899, #9333ea);
+  @apply bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600;
 }
-
 .text-gradient {
-  background: linear-gradient(to right, #fb923c, #ec4899, #9333ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  @apply bg-clip-text text-transparent brand-gradient;
 }

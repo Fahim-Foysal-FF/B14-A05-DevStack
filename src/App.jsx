@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechCard from './components/TechCard';
 import StackSidebar from './components/StackSidebar';
+import Footer from './components/Footer';
 
 export default function App() {
   const [techs, setTechs] = useState([]);
@@ -46,23 +47,26 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-base-200 font-sans pb-10">
+    <div className="min-h-screen bg-[#FAFAFA] font-sans">
       <Navbar />
       <Hero />
       
-      <div className="max-w-7xl mx-auto px-4 mt-10">
-        <div className="flex flex-col lg:flex-row gap-6">
+      <div className="max-w-7xl mx-auto px-4 mt-16">
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold text-gray-900">Explore the <span className="text-gradient">Technologies</span></h2>
+          <p className="text-gray-500 mt-3 text-lg">Pick one technology per category to build your ideal stack.</p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Main Grid: Left Side */}
           <div className="lg:w-3/4">
-            <h2 className="text-3xl font-bold mb-6">Explore Technologies</h2>
-            
             {loading ? (
-              <div className="flex justify-center items-center h-40">
-                <span className="loading loading-spinner loading-lg text-secondary"></span>
+              <div className="flex justify-center py-20">
+                <span className="loading loading-spinner loading-lg text-primary"></span>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {techs.map((tech) => (
                   <TechCard 
                     key={tech.id} 
@@ -87,6 +91,7 @@ export default function App() {
         </div>
       </div>
       
+      <Footer />
       <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
